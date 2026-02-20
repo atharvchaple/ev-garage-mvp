@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Service Invoice</h2>
+
+<p><strong>Date:</strong> {{ service.date }}</p>
+<p><strong>Problem:</strong> {{ service.problem }}</p>
+<p><strong>Work Done:</strong> {{ service.work }}</p>
+<p><strong>Total Cost:</strong> ₹{{ service.cost }}</p>
+
+{% endblock %}

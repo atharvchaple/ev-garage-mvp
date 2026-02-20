@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Add Battery</h2>
+
+<form method="post">
+    <input type="text" name="brand" placeholder="Battery Brand" required>
+    <input type="text" name="capacity" placeholder="Capacity (Ah / kWh)" required>
+    <input type="date" name="date" required>
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

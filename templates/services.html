@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Service History</h2>
+
+<a href="/add_service/{{ vehicle_id }}">Add Service</a>
+<br><br>
+
+<ul>
+{% for s in services %}
+    <li>
+        {{ s.date }} |
+        ₹{{ s.cost }}
+        | <a href="/invoice/{{ s.id }}">Invoice</a>
+    </li>
+{% else %}
+    <li>No service records found</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

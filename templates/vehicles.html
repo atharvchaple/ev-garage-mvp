@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Vehicles</h2>
+
+<a href="/add_vehicle/{{ customer.id }}">Add Vehicle</a>
+<br><br>
+
+<ul>
+{% for v in vehicles %}
+    <li>
+        {{ v.vehicle_type }} |
+        {{ v.model_name }} |
+        {{ v.registration_number }}
+        | <a href="/batteries/{{ v.id }}">Batteries</a>
+        | <a href="/services/{{ v.id }}">Services</a>
+    </li>
+{% else %}
+    <li>No vehicles found</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

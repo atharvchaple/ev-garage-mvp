@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EV Garage Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>⚡ EV Garage Management</h2>
+    <a href="/customers">Customers</a>
+</div>
+
+<div class="main-container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

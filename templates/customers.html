@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Customers</h2>
+
+<a href="/add_customer">Add Customer</a>
+<br><br>
+
+<ul>
+{% for c in customers %}
+    <li>
+        {{ c.name }} - {{ c.phone }}
+        | <a href="/vehicles/{{ c.id }}">Vehicles</a>
+    </li>
+{% else %}
+    <li>No customers found</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

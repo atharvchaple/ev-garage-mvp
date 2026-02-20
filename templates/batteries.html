@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Battery History</h2>
+
+<a href="/add_battery/{{ vehicle_id }}">Add Battery</a>
+<br><br>
+
+<ul>
+{% for b in batteries %}
+    <li>
+        {{ b.brand }} |
+        {{ b.capacity }} |
+        {{ b.date }}
+    </li>
+{% else %}
+    <li>No battery records found</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
