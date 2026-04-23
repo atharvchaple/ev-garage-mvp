@@ -14,7 +14,7 @@ with app.app_context():
 def index():
     return redirect('/customers')
 
-# ---------------- CUSTOMER ----------------
+#CUSTOMER 
 @app.route('/customers')
 def customers():
     return render_template('customers.html', customers=Customer.query.all())
@@ -32,7 +32,7 @@ def add_customer():
         return redirect('/customers')
     return render_template('add_customer.html')
 
-# ---------------- VEHICLE ----------------
+#VEHICLE 
 @app.route('/vehicles/<int:customer_id>')
 def vehicles(customer_id):
     customer = Customer.query.get(customer_id)
@@ -57,7 +57,7 @@ def add_vehicle(customer_id):
         return redirect(f'/vehicles/{customer_id}')
     return render_template('add_vehicle.html', customer_id=customer_id)
 
-# ---------------- BATTERY ----------------
+#BATTERY 
 @app.route('/batteries/<int:vehicle_id>')
 def batteries(vehicle_id):
     batteries = Battery.query.filter_by(vehicle_id=vehicle_id).all()
@@ -81,7 +81,7 @@ def add_battery(vehicle_id):
         return redirect(f'/batteries/{vehicle_id}')
     return render_template('add_battery.html', vehicle_id=vehicle_id)
 
-# ---------------- SERVICE ----------------
+#SERVICE 
 @app.route('/services/<int:vehicle_id>')
 def services(vehicle_id):
     services = ServiceRecord.query.filter_by(vehicle_id=vehicle_id).all()
@@ -110,7 +110,7 @@ def add_service(vehicle_id):
         vehicle_id=vehicle_id
     )
 
-# ---------------- INVOICE ----------------
+#INVOICE
 @app.route('/invoice/<int:service_id>')
 def invoice(service_id):
     service = ServiceRecord.query.get(service_id)
